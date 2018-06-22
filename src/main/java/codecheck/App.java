@@ -7,22 +7,20 @@ public class App {
 		String[] param2 = args[1].split(":");
 		String str = args[2];
 
-		String result = null;
+		String result = "";
 
+		if (Integer.parseInt(str) % Integer.parseInt(param1[0]) == 0) {
 
-		  if (Integer.parseInt(str) % Integer.parseInt(param1[0]) == 0) {
+			result = param1[1];
 
-			  result = param1[1];
+		} else if (Integer.parseInt(str) % Integer.parseInt(param2[0]) == 0)  {
 
-		  } else if (Integer.parseInt(str) % Integer.parseInt(param2[0]) == 0)  {
+			result = result + param2[1];
 
-			  result = result + param2[1];
-
-
-		  } else {
-			  result  = str;
-		  }
-
-			System.out.println(result);
+		} else {
+			result  = str;
 		}
+
+		System.out.println(result);
+	}
 }
