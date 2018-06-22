@@ -6,7 +6,6 @@ import java.util.List;
 public class App {
 	public static void main(String[] args) {
 
-
 		List<String> paramList = new ArrayList<String>();
 
 		for (int i = 0; i < args.length; i++) {
@@ -16,7 +15,6 @@ public class App {
 		String result = "";
 
 		String str = paramList.get(paramList.size()-1);
-
 
 		for (int i = 0; i < paramList.size(); i++) {
 
