@@ -13,11 +13,16 @@ public class App {
 
 			result = param1[1];
 
-		} else if (Integer.parseInt(str) % Integer.parseInt(param2[0]) == 0)  {
+		}
+
+		if (Integer.parseInt(str) % Integer.parseInt(param2[0]) == 0)  {
 
 			result = result + param2[1];
 
-		} else {
+		}
+
+		if (result.isEmpty()) {
+
 			result  = str;
 		}
 
