@@ -1,29 +1,44 @@
 package codecheck;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class App {
 	public static void main(String[] args) {
 
-		String[] param1 = args[0].split(":");
-		String[] param2 = args[1].split(":");
-		String str = args[2];
+
+		List<String> paramList = new ArrayList<String>();
+
+		for (int i = 0; i < args.length; i++) {
+			paramList.add(args[i]);
+		}
 
 		String result = "";
 
-		if (Integer.parseInt(str) % Integer.parseInt(param1[0]) == 0) {
+		String str = paramList.get(paramList.size()-1);
 
-			result = param1[1];
 
-		}
+		for (int i = 0; i < paramList.size(); i++) {
 
-		if (Integer.parseInt(str) % Integer.parseInt(param2[0]) == 0)  {
+			if(i != paramList.size()-1) {
 
-			result = result + param2[1];
+				String[] param1 = paramList.get(i).split(":");
 
-		}
+				if (Integer.parseInt(str) % Integer.parseInt(param1[0]) == 0) {
 
-		if (result.isEmpty()) {
+					result = result + param1[1];
 
-			result  = str;
+				}
+
+			} else {
+
+				if (result.isEmpty()) {
+
+					result  = str;
+				}
+
+			}
+
 		}
 
 		System.out.println(result);
